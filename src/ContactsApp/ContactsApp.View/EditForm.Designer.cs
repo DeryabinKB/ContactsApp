@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditForm));
             this.BirthdayDayEditTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.PhoneLable = new System.Windows.Forms.Label();
-            this.MailLable = new System.Windows.Forms.Label();
-            this.VkLable = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.MailLabel = new System.Windows.Forms.Label();
+            this.VkLabel = new System.Windows.Forms.Label();
             this.PhoneEditTextBox = new System.Windows.Forms.TextBox();
             this.MailEditTextBox = new System.Windows.Forms.TextBox();
             this.VkEditTextBox = new System.Windows.Forms.TextBox();
@@ -53,41 +53,41 @@
             this.BirthdayDayEditTimePicker.TabIndex = 29;
             this.BirthdayDayEditTimePicker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             // 
-            // PhoneLable
+            // PhoneLabel
             // 
-            this.PhoneLable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneLable.AutoSize = true;
-            this.PhoneLable.Location = new System.Drawing.Point(36, 99);
-            this.PhoneLable.Name = "PhoneLable";
-            this.PhoneLable.Size = new System.Drawing.Size(41, 13);
-            this.PhoneLable.TabIndex = 28;
-            this.PhoneLable.Text = "Phone:";
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Location = new System.Drawing.Point(36, 99);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(41, 13);
+            this.PhoneLabel.TabIndex = 28;
+            this.PhoneLabel.Text = "Phone:";
             // 
-            // MailLable
+            // MailLabel
             // 
-            this.MailLable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MailLable.AutoSize = true;
-            this.MailLable.Location = new System.Drawing.Point(35, 127);
-            this.MailLable.Name = "MailLable";
-            this.MailLable.Size = new System.Drawing.Size(42, 13);
-            this.MailLable.TabIndex = 27;
-            this.MailLable.Text = "E-mail:";
+            this.MailLabel.AutoSize = true;
+            this.MailLabel.Location = new System.Drawing.Point(35, 127);
+            this.MailLabel.Name = "MailLabel";
+            this.MailLabel.Size = new System.Drawing.Size(42, 13);
+            this.MailLabel.TabIndex = 27;
+            this.MailLabel.Text = "E-mail:";
             // 
-            // VkLable
+            // VkLabel
             // 
-            this.VkLable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.VkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VkLable.AutoSize = true;
-            this.VkLable.Location = new System.Drawing.Point(30, 155);
-            this.VkLable.Name = "VkLable";
-            this.VkLable.Size = new System.Drawing.Size(47, 13);
-            this.VkLable.TabIndex = 26;
-            this.VkLable.Text = "vk.com:";
+            this.VkLabel.AutoSize = true;
+            this.VkLabel.Location = new System.Drawing.Point(30, 155);
+            this.VkLabel.Name = "VkLabel";
+            this.VkLabel.Size = new System.Drawing.Size(47, 13);
+            this.VkLabel.TabIndex = 26;
+            this.VkLabel.Text = "vk.com:";
             // 
             // PhoneEditTextBox
             // 
@@ -125,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthdayDateTimePicker.AutoSize = true;
-            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(24, 71);
+            this.BirthdayDateTimePicker.Location = new System.Drawing.Point(24, 73);
             this.BirthdayDateTimePicker.Name = "BirthdayDateTimePicker";
             this.BirthdayDateTimePicker.Size = new System.Drawing.Size(53, 13);
             this.BirthdayDateTimePicker.TabIndex = 22;
@@ -205,9 +205,9 @@
             this.Controls.Add(this.EditFormCancelButton);
             this.Controls.Add(this.EditFormOKButton);
             this.Controls.Add(this.BirthdayDayEditTimePicker);
-            this.Controls.Add(this.PhoneLable);
-            this.Controls.Add(this.MailLable);
-            this.Controls.Add(this.VkLable);
+            this.Controls.Add(this.PhoneLabel);
+            this.Controls.Add(this.MailLabel);
+            this.Controls.Add(this.VkLabel);
             this.Controls.Add(this.PhoneEditTextBox);
             this.Controls.Add(this.MailEditTextBox);
             this.Controls.Add(this.VkEditTextBox);
@@ -220,7 +220,7 @@
             this.MaximumSize = new System.Drawing.Size(670, 254);
             this.MinimumSize = new System.Drawing.Size(670, 254);
             this.Name = "EditForm";
-            this.Text = "Add/Edit Form";
+            this.Text = "Contact Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,9 +229,9 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker BirthdayDayEditTimePicker;
-        private System.Windows.Forms.Label PhoneLable;
-        private System.Windows.Forms.Label MailLable;
-        private System.Windows.Forms.Label VkLable;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.Label MailLabel;
+        private System.Windows.Forms.Label VkLabel;
         private System.Windows.Forms.TextBox PhoneEditTextBox;
         private System.Windows.Forms.TextBox MailEditTextBox;
         private System.Windows.Forms.TextBox VkEditTextBox;
