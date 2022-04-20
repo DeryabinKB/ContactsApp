@@ -29,27 +29,24 @@ namespace ContactsApp.View
                 PhoneTextBox.Text = "+78005553535";
                 MailTextBox.Text = "abram@mail.ru";
                 VkTextBox.Text = "id0000000";
-                return;
             }
             if (selectedItem == "Берилов")
             {
                 SurnameTextBox.Text = "Берилов";
                 NameTextBox.Text = "Максим";
                 BirthdayDayTimePicker.Value = new DateTime(1999, 5, 12);
-                PhoneTextBox.Text = "+78005553535";
+                PhoneTextBox.Text = "+78905553535";
                 MailTextBox.Text = "ber@gmail.com";
-                VkTextBox.Text = "id1234566";
-                return;
+                VkTextBox.Text = "ididididid";
             }
             if (selectedItem == "Семёнов")
             {
                 SurnameTextBox.Text = "Семёнов";
                 NameTextBox.Text = "Кирилл";
                 BirthdayDayTimePicker.Value = new DateTime(2003, 2, 1);
-                PhoneTextBox.Text = "+78005553535";
+                PhoneTextBox.Text = "+78505553535";
                 MailTextBox.Text = "verf@inbox.ru";
-                VkTextBox.Text = "id1234566";
-                return;
+                VkTextBox.Text = "idddiiiii";
             }
 
         }

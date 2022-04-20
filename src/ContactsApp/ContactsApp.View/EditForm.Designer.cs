@@ -183,6 +183,7 @@
             this.EditFormOKButton.TabIndex = 30;
             this.EditFormOKButton.Text = "OK";
             this.EditFormOKButton.UseVisualStyleBackColor = true;
+            this.EditFormOKButton.Click += new System.EventHandler(this.EditFormOKButton_Click);
             // 
             // EditFormCancelButton
             // 
@@ -193,6 +194,7 @@
             this.EditFormCancelButton.TabIndex = 31;
             this.EditFormCancelButton.Text = "Cancel";
             this.EditFormCancelButton.UseVisualStyleBackColor = true;
+            this.EditFormCancelButton.Click += new System.EventHandler(this.EditFormCancelButton_Click);
             // 
             // EditForm
             // 
