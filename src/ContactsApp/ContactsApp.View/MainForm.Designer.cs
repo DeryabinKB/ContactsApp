@@ -38,7 +38,7 @@
             this.removeContactToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.FindLable = new System.Windows.Forms.Label();
             this.ContactsListBox = new System.Windows.Forms.ListBox();
             this.FindTextBox = new System.Windows.Forms.TextBox();
             this.SurnameLabel = new System.Windows.Forms.Label();
@@ -101,19 +101,19 @@
             // addContactToolStripMenuItem1
             // 
             this.addContactToolStripMenuItem1.Name = "addContactToolStripMenuItem1";
-            this.addContactToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addContactToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.addContactToolStripMenuItem1.Text = "Add Contact";
             // 
             // editContactToolStripMenuItem1
             // 
             this.editContactToolStripMenuItem1.Name = "editContactToolStripMenuItem1";
-            this.editContactToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editContactToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.editContactToolStripMenuItem1.Text = "Edit Contact";
             // 
             // removeContactToolStripMenuItem1
             // 
             this.removeContactToolStripMenuItem1.Name = "removeContactToolStripMenuItem1";
-            this.removeContactToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.removeContactToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.removeContactToolStripMenuItem1.Text = "Remove Contact";
             // 
             // helpToolStripMenuItem1
@@ -127,18 +127,18 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
-            // label1
+            // FindLable
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Find:";
+            this.FindLable.AutoSize = true;
+            this.FindLable.Location = new System.Drawing.Point(12, 33);
+            this.FindLable.Name = "FindLable";
+            this.FindLable.Size = new System.Drawing.Size(32, 13);
+            this.FindLable.TabIndex = 2;
+            this.FindLable.Text = "Find:";
             // 
             // ContactsListBox
             // 
@@ -349,8 +349,9 @@
             this.Controls.Add(this.SurnameLabel);
             this.Controls.Add(this.FindTextBox);
             this.Controls.Add(this.ContactsListBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.FindLable);
             this.Controls.Add(this.MenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
             this.MinimumSize = new System.Drawing.Size(474, 237);
             this.Name = "MainForm";
@@ -375,7 +376,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeContactToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FindLable;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Label SurnameLabel;
