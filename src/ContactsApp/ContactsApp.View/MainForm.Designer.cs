@@ -55,11 +55,11 @@
             this.BirthdayDayTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ContactCreatePictureBox = new System.Windows.Forms.PictureBox();
             this.ContactEditPictureBox = new System.Windows.Forms.PictureBox();
-            this.ContactDeletePictureBox = new System.Windows.Forms.PictureBox();
+            this.ContactsDeletePictureBox = new System.Windows.Forms.PictureBox();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactCreatePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContactEditPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContactDeletePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactsDeletePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -317,22 +317,22 @@
             this.ContactEditPictureBox.TabStop = false;
             this.ContactEditPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // ContactDeletePictureBox
+            // ContactsDeletePictureBox
             // 
-            this.ContactDeletePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ContactDeletePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ContactDeletePictureBox.Image")));
-            this.ContactDeletePictureBox.Location = new System.Drawing.Point(63, 493);
-            this.ContactDeletePictureBox.Name = "ContactDeletePictureBox";
-            this.ContactDeletePictureBox.Size = new System.Drawing.Size(21, 21);
-            this.ContactDeletePictureBox.TabIndex = 21;
-            this.ContactDeletePictureBox.TabStop = false;
+            this.ContactsDeletePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ContactsDeletePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("ContactsDeletePictureBox.Image")));
+            this.ContactsDeletePictureBox.Location = new System.Drawing.Point(63, 493);
+            this.ContactsDeletePictureBox.Name = "ContactsDeletePictureBox";
+            this.ContactsDeletePictureBox.Size = new System.Drawing.Size(21, 21);
+            this.ContactsDeletePictureBox.TabIndex = 21;
+            this.ContactsDeletePictureBox.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 525);
-            this.Controls.Add(this.ContactDeletePictureBox);
+            this.Controls.Add(this.ContactsDeletePictureBox);
             this.Controls.Add(this.ContactEditPictureBox);
             this.Controls.Add(this.ContactCreatePictureBox);
             this.Controls.Add(this.BirthdayDayTimePicker);
@@ -360,7 +360,7 @@
             this.MenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactCreatePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContactEditPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ContactDeletePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContactsDeletePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.DateTimePicker BirthdayDayTimePicker;
         private System.Windows.Forms.PictureBox ContactCreatePictureBox;
         private System.Windows.Forms.PictureBox ContactEditPictureBox;
-        private System.Windows.Forms.PictureBox ContactDeletePictureBox;
+        private System.Windows.Forms.PictureBox ContactsDeletePictureBox;
     }
 }
 
