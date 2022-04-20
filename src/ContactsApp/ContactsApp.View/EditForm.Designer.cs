@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditForm));
             this.BirthdayDayEditTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PhoneLable = new System.Windows.Forms.Label();
             this.MailLable = new System.Windows.Forms.Label();
@@ -215,6 +216,7 @@
             this.Controls.Add(this.NameEditTextBox);
             this.Controls.Add(this.SurnameEditTextBox);
             this.Controls.Add(this.SurnameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(670, 254);
             this.MinimumSize = new System.Drawing.Size(670, 254);
             this.Name = "EditForm";
