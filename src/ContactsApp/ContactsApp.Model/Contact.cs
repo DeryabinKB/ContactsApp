@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ContactsApp.Model
 {
     /// <summary>
@@ -27,11 +28,6 @@ namespace ContactsApp.Model
         private DateTime _birthday;
 
         /// <summary>
-        /// Номер контакта.
-        /// </summary>
-        private PhoneNumber _phoneNumber;
-
-        /// <summary>
         /// Почтовый адрес контакта. 
         /// </summary>
         private string _email;
@@ -50,6 +46,8 @@ namespace ContactsApp.Model
         /// Ограничение длины поля вк айди.
         /// </summary>
         public const int _vkIdLengthLimit = 15;
+
+        public PhoneNumber Number { get; set; }
 
         /// <summary>
         /// Возврат или задание значения поля Фамилия.
@@ -149,12 +147,12 @@ namespace ContactsApp.Model
         /// <summary>
         /// Конструктор контактов.
         /// </summary>
-        public Contact(string name, string surname, PhoneNumber phoneNumber,
+        public Contact(string name, string surname, PhoneNumber number,
             DateTime birthday, string email, string vkId)
         {
             this.Name = name;
             this.Surname = surname;
-            this.PhoneNumber = phoneNumber;
+            this.Number = number;
             this.Birthday = birthday;
             this.Email = email;
             this.VkId = vkId;
@@ -166,7 +164,7 @@ namespace ContactsApp.Model
         object ICloneable.Clone()
         {
             return new Contact(this.Name, this.Surname,
-                new PhoneNumber(this.PhoneNumber.Number), this.Birthday,
+                new PhoneNumber(this.Number.Number), this.Birthday,
                 this.Email, this.VkId);
         }
     }

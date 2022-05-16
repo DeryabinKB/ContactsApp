@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ContactsApp.Model
 {
-	class PhoneNumber
+	public class PhoneNumber
 	{
-		private long int _number;
+		private double _number;
 
 		/// <summary>
 		/// Ограничение длины поля мобильный телефон.
@@ -18,7 +18,7 @@ namespace ContactsApp.Model
 		/// <summary>
 		/// Возврат или задание значения поля номер.
 		/// </summary>
-		public long	Number
+		public double Number
         {
 			get 
 			{
@@ -34,15 +34,13 @@ namespace ContactsApp.Model
             }
         }
 
-		/// <summary>
-		/// Конструктор номера.
-		/// </summary>
-		/// <param name="number">Номер телефона контакта.</param>
-		public PhoneNumber(long int number)
+        /// <summary>
+        /// Создание экземпляра телефонного номера.
+        /// </summary>
+        /// <param name="number">Номер телефона контакта.</param>
+        public PhoneNumber(double number)
         {
 			this._number = number;
         }
-
-		PhoneNumber(23);
 	}
 }

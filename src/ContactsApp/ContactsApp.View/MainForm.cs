@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContactsApp.Model;
+
 
 namespace ContactsApp.View
 {
     public partial class MainForm : Form
     {
+        private Project _project = new Project();
         public MainForm()
         {
             InitializeComponent();
         }
+
+
 
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
