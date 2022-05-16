@@ -127,6 +127,17 @@ namespace ContactsApp.View
             BirthdayDayTimePicker.Value = tempContact.Birthday;
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show
+                ("Do you really want to exit?",
+                "Confirmation",
+                MessageBoxButtons.OKCancel);
+            if (result != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
 
         private void aboutStripMenu_Click(object sender, EventArgs e)
         {
@@ -164,6 +175,18 @@ namespace ContactsApp.View
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
+        }
+
+        private void ExitStripMenu_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show
+                ("Do you really want to exit?",
+                "Confirmation",
+                MessageBoxButtons.OKCancel);
+            if (result != DialogResult.Cancel)
+            {
+                Close();
+            }
         }
     }
 }

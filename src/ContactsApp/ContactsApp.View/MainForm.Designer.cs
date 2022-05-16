@@ -85,8 +85,9 @@
             // ExitStripMenu
             // 
             this.ExitStripMenu.Name = "ExitStripMenu";
-            this.ExitStripMenu.Size = new System.Drawing.Size(95, 22);
+            this.ExitStripMenu.Size = new System.Drawing.Size(180, 22);
             this.ExitStripMenu.Text = "Exit";
+            this.ExitStripMenu.Click += new System.EventHandler(this.ExitStripMenu_Click);
             // 
             // EditStripMenu
             // 
