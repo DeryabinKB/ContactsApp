@@ -17,7 +17,9 @@ namespace ContactsApp.View
         private Project _project = new Project();
         public MainForm()
         {
+            _project = new Project();
             InitializeComponent();
+            ContactsListBox.Items.Clear();
         }
 
         private void UpdateListBox()
@@ -25,7 +27,7 @@ namespace ContactsApp.View
             ContactsListBox.Items.Clear();
             foreach (Contact contact in _project.Contacts)
             {
-                ContactsListBox.Items.Add(contact.Name);
+                ContactsListBox.Items.Add(contact.Surname);
             }
         }
 
@@ -33,7 +35,7 @@ namespace ContactsApp.View
         {
             var randomNames = new List<string>
             {
-                "Даниил","Максим","Керилл","Алехандро"
+                "Даниил","Максим","Кирилл","Алехандро"
                 ,"Фёдр","Пётр"
             };
             var randomSurnames = new List<string>
@@ -60,60 +62,47 @@ namespace ContactsApp.View
                 "id845625","kein","berilliin1","heeeeyyy"
             };
             Random random = new Random();
-            Contact contact = new Contact(randomNames[random.Next(randomNames.Count)],
+            Contact contact = new 
+                Contact(randomNames[random.Next(randomNames.Count)],
                 randomSurnames[random.Next(randomSurnames.Count)],
                 new PhoneNumber(79534599771),
                 //randomPhoneNumbers[random.Next(randomPhoneNumbers.Count)],
-                new DateTime(random.Next(1980,2022)),
+                new DateTime(2001,06,07),
                 randomEmails[random.Next(randomEmails.Count)],
                 randomVkId[random.Next(randomVkId.Count)]);
+
             _project.Contacts.Add(contact);
         }
 
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem;
-            selectedItem = ContactsListBox.SelectedItem.ToString();
-            if (selectedItem == "Абрамов")
-            {
-                SurnameTextBox.Text = "Абрамов";
-                NameTextBox.Text = "Даниил";
-                BirthdayDayTimePicker.Value = new DateTime(2001, 7, 6);
-                PhoneTextBox.Text = "+78005553535";
-                MailTextBox.Text = "abram@mail.ru";
-                VkTextBox.Text = "id0000000";
-            }
-            if (selectedItem == "Берилов")
-            {
-                SurnameTextBox.Text = "Берилов";
-                NameTextBox.Text = "Максим";
-                BirthdayDayTimePicker.Value = new DateTime(1999, 5, 12);
-                PhoneTextBox.Text = "+78905553535";
-                MailTextBox.Text = "ber@gmail.com";
-                VkTextBox.Text = "ididididid";
-            }
-            if (selectedItem == "Семёнов")
-            {
-                SurnameTextBox.Text = "Семёнов";
-                NameTextBox.Text = "Кирилл";
-                BirthdayDayTimePicker.Value = new DateTime(2003, 2, 1);
-                PhoneTextBox.Text = "+78505553535";
-                MailTextBox.Text = "verf@inbox.ru";
-                VkTextBox.Text = "idddiiiii";
-            }
+            UpdateSelectedContact(ContactsListBox.SelectedIndex);
+        }
 
+        private void UpdateSelectedContact(int index)
+        {
+            var tempContact = _project.Contacts[index];
+            SurnameTextBox.Text = tempContact.Surname;
+            NameTextBox.Text = tempContact.Name;
+            PhoneTextBox.Text = "79138853212";
+            MailTextBox.Text = tempContact.Email;
+            VkTextBox.Text = tempContact.VkId;
+            BirthdayDayTimePicker.Value = tempContact.Birthday;
         }
 
         private void aboutStripMenu_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
+
         }
 
         private void contactCreatePictureBox_Click(object sender, EventArgs e)
         {
-            EditForm newForm = new EditForm();
-            newForm.Show();
+            //EditForm newForm = new EditForm();
+            //newForm.Show();
+            AddContact();
+            UpdateListBox();
         }
 
         private void contactEditPictureBox_Click(object sender, EventArgs e)
