@@ -22,7 +22,52 @@ namespace ContactsApp.View
 
         private void UpdateListBox()
         {
+            ContactsListBox.Items.Clear();
+            foreach (Contact contact in _project.Contacts)
+            {
+                ContactsListBox.Items.Add(contact.Name);
+            }
+        }
 
+        private void AddContact()
+        {
+            var randomNames = new List<string>
+            {
+                "Даниил","Максим","Керилл","Алехандро"
+                ,"Фёдр","Пётр"
+            };
+            var randomSurnames = new List<string>
+            {
+                "Абрамов","Бериллов","Фёдоров",
+                "Семёнов","Константинов"
+            };
+            //var randomPhoneNumbers = new List<string>
+            //{
+            //"78005553535","79531239746","79135578913"
+            //};
+            var randomEmails = new List<string>
+            {
+                "aaabramov@mail.ru",
+                "petrketr@gmail.com",
+                "berillii@inbox.ru",
+                "ker124@mail.ru",
+                "holymail@gmail.com",
+                "maxxx123@mail.ru",
+                "ded@inbox.ru"
+            };
+            var randomVkId = new List<string>
+            {
+                "id845625","kein","berilliin1","heeeeyyy"
+            };
+            Random random = new Random();
+            Contact contact = new Contact(randomNames[random.Next(randomNames.Count)],
+                randomSurnames[random.Next(randomSurnames.Count)],
+                new PhoneNumber(79534599771),
+                //randomPhoneNumbers[random.Next(randomPhoneNumbers.Count)],
+                new DateTime(random.Next(1980,2022)),
+                randomEmails[random.Next(randomEmails.Count)],
+                randomVkId[random.Next(randomVkId.Count)]);
+            _project.Contacts.Add(contact);
         }
 
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,19 +104,19 @@ namespace ContactsApp.View
 
         }
 
-        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void aboutStripMenu_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void contactCreatePictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void contactEditPictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();
