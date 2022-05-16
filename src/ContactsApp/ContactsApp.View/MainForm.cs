@@ -31,6 +31,8 @@ namespace ContactsApp.View
             }
         }
 
+        //private void ClearSelecteContact
+
         private void AddContact()
         {
             var randomNames = new List<string>
@@ -74,6 +76,36 @@ namespace ContactsApp.View
             _project.Contacts.Add(contact);
         }
 
+        private void RemoveContact(int index)
+        {
+            if (index == -1)
+            {
+                return;
+            }
+
+            DialogResult result = MessageBox.Show
+                ("Do you really want to remove this contact?",
+                "Confirmation",
+                MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                _project.Contacts.RemoveAt(index);
+                ContactsListBox.SelectedItem = -1;
+                ClearSelectedContact();
+                UpdateListBox();
+            }
+        }
+
+        private void ClearSelectedContact()
+        {
+            SurnameTextBox.Text = string.Empty;
+            NameTextBox.Text = string.Empty;
+            PhoneTextBox.Text = string.Empty;
+            MailTextBox.Text = string.Empty;
+            VkTextBox.Text = string.Empty;
+            BirthdayDayTimePicker.Value = BirthdayDayTimePicker.MinDate; 
+        }
+
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateSelectedContact(ContactsListBox.SelectedIndex);
@@ -81,6 +113,11 @@ namespace ContactsApp.View
 
         private void UpdateSelectedContact(int index)
         {
+            if (index == -1)
+            {
+                ClearSelectedContact();
+                return;
+            }
             var tempContact = _project.Contacts[index];
             SurnameTextBox.Text = tempContact.Surname;
             NameTextBox.Text = tempContact.Name;
@@ -89,6 +126,7 @@ namespace ContactsApp.View
             VkTextBox.Text = tempContact.VkId;
             BirthdayDayTimePicker.Value = tempContact.Birthday;
         }
+
 
         private void aboutStripMenu_Click(object sender, EventArgs e)
         {
@@ -109,6 +147,23 @@ namespace ContactsApp.View
         {
             EditForm newForm = new EditForm();
             newForm.Show();
+        }
+
+        private void AddContactStripMenu_Click(object sender, EventArgs e)
+        {
+            AddContact();
+            UpdateListBox();
+        }
+
+        private void ContactsDeletePictureBox_Click(object sender, EventArgs e)
+        {
+            RemoveContact(ContactsListBox.SelectedIndex);
+
+        }
+
+        private void RemoveContactStripMenu_Click(object sender, EventArgs e)
+        {
+            RemoveContact(ContactsListBox.SelectedIndex);
         }
     }
 }
