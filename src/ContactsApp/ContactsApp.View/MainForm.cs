@@ -20,7 +20,10 @@ namespace ContactsApp.View
             InitializeComponent();
         }
 
+        private void UpdateListBox()
+        {
 
+        }
 
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {

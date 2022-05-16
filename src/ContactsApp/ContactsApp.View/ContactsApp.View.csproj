@@ -104,5 +104,11 @@
   <ItemGroup>
     <Content Include="BookmarkIcon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactsApp.Model\ContactsApp.Model.csproj">
+      <Project>{e49ca304-2d1e-4dae-a39d-feb0b89d0f80}</Project>
+      <Name>ContactsApp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

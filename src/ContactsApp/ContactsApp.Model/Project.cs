@@ -9,7 +9,7 @@ namespace ContactsApp.Model
     /// <summary>
     /// Проект.
     /// </summary>
-    class Project
+    public class Project
     {
         /// <summary>
         /// Список всех контактов.
