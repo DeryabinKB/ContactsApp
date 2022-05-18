@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ContactsApp.Model
 {
     /// <summary>
-    /// Проект.
+    /// Класс Проект.
     /// </summary>
     public class Project
     {

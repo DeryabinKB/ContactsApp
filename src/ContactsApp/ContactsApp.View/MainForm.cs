@@ -22,6 +22,9 @@ namespace ContactsApp.View
             ContactsListBox.Items.Clear();
         }
 
+        /// <summary>
+        /// Обновление ListBox.
+        /// </summary>
         private void UpdateListBox()
         {
             ContactsListBox.Items.Clear();
@@ -31,8 +34,9 @@ namespace ContactsApp.View
             }
         }
 
-        //private void ClearSelecteContact
-
+        /// <summary>
+        /// Добавление контакта в ListBox.
+        /// </summary>
         private void AddContact()
         {
             var randomNames = new List<string>
@@ -76,6 +80,10 @@ namespace ContactsApp.View
             _project.Contacts.Add(contact);
         }
 
+        /// <summary>
+        /// Удаление контакта из ListBox.
+        /// </summary>
+        /// <param name="index">Индекс контакта в ListBox.</param>
         private void RemoveContact(int index)
         {
             if (index == -1)
@@ -85,7 +93,7 @@ namespace ContactsApp.View
 
             DialogResult result = MessageBox.Show
                 ("Do you really want to remove this contact?",
-                "Confirmation",
+                "Confirm?",
                 MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
@@ -96,6 +104,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Удаление информации контакта.
+        /// </summary>
         private void ClearSelectedContact()
         {
             SurnameTextBox.Text = string.Empty;
@@ -106,11 +117,18 @@ namespace ContactsApp.View
             BirthdayDayTimePicker.Value = BirthdayDayTimePicker.MinDate; 
         }
 
+        /// <summary>
+        /// Изменение показываемого контакта при изменении индекса.
+        /// </summary>
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateSelectedContact(ContactsListBox.SelectedIndex);
         }
 
+        /// <summary>
+        /// Обновление информации текущего контакта.
+        /// </summary>
+        /// <param name="index">Индекс контакта в ListBox.</param>
         private void UpdateSelectedContact(int index)
         {
             if (index == -1)
@@ -127,6 +145,9 @@ namespace ContactsApp.View
             BirthdayDayTimePicker.Value = tempContact.Birthday;
         }
 
+        /// <summary>
+        /// Действия при закрытии формы.
+        /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show
@@ -139,44 +160,63 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Открытие окна About.
+        /// </summary>
         private void aboutStripMenu_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
-
         }
 
+        /// <summary>
+        /// Срабатывание кнопки добавления контакта в ListBox.
+        /// </summary>
         private void contactCreatePictureBox_Click(object sender, EventArgs e)
         {
-            //EditForm newForm = new EditForm();
-            //newForm.Show();
             AddContact();
             UpdateListBox();
         }
 
+        /// <summary>
+        /// Открытие окна редактирования контакта.
+        /// </summary>
         private void contactEditPictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();
         }
 
+        /// <summary>
+        /// Добавление контакта через Strip menu.
+        /// </summary>
         private void AddContactStripMenu_Click(object sender, EventArgs e)
         {
             AddContact();
             UpdateListBox();
         }
 
+        /// <summary>
+        /// Удаление контакта.
+        /// </summary>
         private void ContactsDeletePictureBox_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
-
         }
 
+        /// <summary>
+        /// Удаление контакта через Strip menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
         }
 
+        /// <summary>
+        /// Выход через Strip menu.
+        /// </summary>
         private void ExitStripMenu_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show

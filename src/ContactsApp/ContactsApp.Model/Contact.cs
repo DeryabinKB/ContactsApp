@@ -151,8 +151,8 @@ namespace ContactsApp.Model
         /// <param name="surname">Фамилия контакта.</param>
         /// <param name="number">Номер телефона контакта.</param>
         /// <param name="birthday">Дата рождения контакта.</param>
-        /// <param name="email"\>Мэйл контакта.</param>
-        /// <param name="vkId">VK id контакта</param>
+        /// <param name="email">Мэйл контакта.</param>
+        /// <param name="vkId">VK id контакта.</param>
         public Contact(string name, string surname, PhoneNumber number,
             DateTime birthday, string email, string vkId)
         {

@@ -23,7 +23,7 @@ namespace ContactsApp.Model
             "\\ContactsApp\\";
 
         /// <summary>
-        /// Путь.
+        /// Путь сохранения файла.
         /// </summary>
         private static readonly string _path = _folder + _fileName;
 
@@ -46,6 +46,7 @@ namespace ContactsApp.Model
                 serializer.Serialize(writer, data);
             }
         }
+
         /// <summary>
         /// Загрузка файла.
         /// </summary>
