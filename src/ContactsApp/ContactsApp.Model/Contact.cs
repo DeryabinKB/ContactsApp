@@ -62,7 +62,7 @@ namespace ContactsApp.Model
             {
                 if (value.Length > _letterLengthLimit || value.Length == 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Некорректное значение длины поля Surname");
                 }
                 _surname = value;
             }
@@ -81,7 +81,7 @@ namespace ContactsApp.Model
             {
                 if (value.Length> _letterLengthLimit || value.Length == 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Некорректное значение длины поля Name");
                 }
                 _name = value;
             }
@@ -100,7 +100,7 @@ namespace ContactsApp.Model
             {
                 if (value.Year < 1900 || value > DateTime.Now)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Некорректное значение поля Birthday");
                 }
                 _birthday = value;
             }
@@ -119,7 +119,7 @@ namespace ContactsApp.Model
             {
                 if (value.Length>_letterLengthLimit || value.Length == 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Некорректное значение длины поля E-mail");
                 }
                 _email = value;
             }
@@ -138,7 +138,7 @@ namespace ContactsApp.Model
             {
                 if (value.Length > _vkIdLengthLimit ||value.Length == 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Некорректное значение длины поля vk.com");
                 }
                 _vkId = value;
             }

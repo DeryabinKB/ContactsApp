@@ -52,6 +52,7 @@
             this.BirthdayDayEditTimePicker.Size = new System.Drawing.Size(125, 22);
             this.BirthdayDayEditTimePicker.TabIndex = 29;
             this.BirthdayDayEditTimePicker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
+            this.BirthdayDayEditTimePicker.ValueChanged += new System.EventHandler(this.BirthdayDayEditTimePicker_ValueChanged);
             // 
             // PhoneLabel
             // 
@@ -98,6 +99,7 @@
             this.PhoneEditTextBox.Name = "PhoneEditTextBox";
             this.PhoneEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.PhoneEditTextBox.TabIndex = 25;
+            this.PhoneEditTextBox.TextChanged += new System.EventHandler(this.PhoneEditTextBox_TextChanged);
             // 
             // MailEditTextBox
             // 
@@ -108,6 +110,7 @@
             this.MailEditTextBox.Name = "MailEditTextBox";
             this.MailEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.MailEditTextBox.TabIndex = 24;
+            this.MailEditTextBox.TextChanged += new System.EventHandler(this.MailEditTextBox_TextChanged);
             // 
             // VkEditTextBox
             // 
@@ -118,6 +121,7 @@
             this.VkEditTextBox.Name = "VkEditTextBox";
             this.VkEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.VkEditTextBox.TabIndex = 23;
+            this.VkEditTextBox.TextChanged += new System.EventHandler(this.VkEditTextBox_TextChanged);
             // 
             // BirthdayDateTimePicker
             // 
@@ -152,6 +156,7 @@
             this.NameEditTextBox.Name = "NameEditTextBox";
             this.NameEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.NameEditTextBox.TabIndex = 20;
+            this.NameEditTextBox.TextChanged += new System.EventHandler(this.NameEditTextBox_TextChanged);
             // 
             // SurnameEditTextBox
             // 
@@ -162,6 +167,7 @@
             this.SurnameEditTextBox.Name = "SurnameEditTextBox";
             this.SurnameEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.SurnameEditTextBox.TabIndex = 19;
+            this.SurnameEditTextBox.TextChanged += new System.EventHandler(this.SurnameEditTextBox_TextChanged);
             // 
             // SurnameLabel
             // 
