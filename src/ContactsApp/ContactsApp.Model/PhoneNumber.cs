@@ -8,7 +8,7 @@ namespace ContactsApp.Model
 {
 	public class PhoneNumber
 	{
-		private double _number;
+		private long _number;
 
 		/// <summary>
 		/// Ограничение длины поля мобильный телефон.
@@ -18,7 +18,7 @@ namespace ContactsApp.Model
 		/// <summary>
 		/// Возврат или задание значения поля номер.
 		/// </summary>
-		public double Number
+		public long Number
         {
 			get 
 			{
@@ -28,7 +28,7 @@ namespace ContactsApp.Model
             {
 				if (value.ToString().Length>_numberLengthLimit || !value.ToString().StartsWith("7"))
                 {
-					throw new ArgumentException();
+					throw new ArgumentException("Длина номера должна быть меньше 11 символов и начинаться с 7");
                 }
 				this._number = value;
             }
@@ -38,7 +38,7 @@ namespace ContactsApp.Model
         /// Создание экземпляра телефонного номера.
         /// </summary>
         /// <param name="number">Номер телефона контакта.</param>
-        public PhoneNumber(double number)
+        public PhoneNumber(long number)
         {
 			this._number = number;
         }

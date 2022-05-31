@@ -1,6 +1,6 @@
 ﻿namespace ContactsApp.View
 {
-    partial class EditForm
+    partial class ContactForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactForm));
             this.BirthdayDayEditTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.MailLabel = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.BirthdayDayEditTimePicker.Size = new System.Drawing.Size(125, 22);
             this.BirthdayDayEditTimePicker.TabIndex = 29;
             this.BirthdayDayEditTimePicker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
+            this.BirthdayDayEditTimePicker.ValueChanged += new System.EventHandler(this.BirthdayDayEditTimePicker_ValueChanged);
             // 
             // PhoneLabel
             // 
@@ -98,6 +99,7 @@
             this.PhoneEditTextBox.Name = "PhoneEditTextBox";
             this.PhoneEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.PhoneEditTextBox.TabIndex = 25;
+            this.PhoneEditTextBox.TextChanged += new System.EventHandler(this.PhoneEditTextBox_TextChanged);
             // 
             // MailEditTextBox
             // 
@@ -108,6 +110,7 @@
             this.MailEditTextBox.Name = "MailEditTextBox";
             this.MailEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.MailEditTextBox.TabIndex = 24;
+            this.MailEditTextBox.TextChanged += new System.EventHandler(this.MailEditTextBox_TextChanged);
             // 
             // VkEditTextBox
             // 
@@ -118,6 +121,7 @@
             this.VkEditTextBox.Name = "VkEditTextBox";
             this.VkEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.VkEditTextBox.TabIndex = 23;
+            this.VkEditTextBox.TextChanged += new System.EventHandler(this.VkEditTextBox_TextChanged);
             // 
             // BirthdayDateTimePicker
             // 
@@ -152,6 +156,7 @@
             this.NameEditTextBox.Name = "NameEditTextBox";
             this.NameEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.NameEditTextBox.TabIndex = 20;
+            this.NameEditTextBox.TextChanged += new System.EventHandler(this.NameEditTextBox_TextChanged);
             // 
             // SurnameEditTextBox
             // 
@@ -162,6 +167,7 @@
             this.SurnameEditTextBox.Name = "SurnameEditTextBox";
             this.SurnameEditTextBox.Size = new System.Drawing.Size(559, 22);
             this.SurnameEditTextBox.TabIndex = 19;
+            this.SurnameEditTextBox.TextChanged += new System.EventHandler(this.SurnameEditTextBox_TextChanged);
             // 
             // SurnameLabel
             // 
@@ -197,7 +203,7 @@
             this.EditFormCancelButton.UseVisualStyleBackColor = true;
             this.EditFormCancelButton.Click += new System.EventHandler(this.EditFormCancelButton_Click);
             // 
-            // EditForm
+            // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +225,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(670, 254);
             this.MinimumSize = new System.Drawing.Size(670, 254);
-            this.Name = "EditForm";
+            this.Name = "ContactForm";
             this.Text = "Contact Form";
             this.ResumeLayout(false);
             this.PerformLayout();
