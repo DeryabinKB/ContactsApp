@@ -23,64 +23,61 @@ namespace ContactsApp.View
         private string _emailError;
         private string _vkIdError;
 
-        private bool CheckFromOnErrors()
+        private bool CheckFormOnErrors()
         {
-            if (_surnameError != null)
+            if (_surnameError != string.Empty)
             {
                 MessageBox.Show(_surnameError);
                 return false;
             }
-            else if (_surnameError == null)
-            {
-                return false;
-            }
-            else if (_nameError != null)
+            
+            if (_nameError != string.Empty)
             {
                 MessageBox.Show(_nameError);
                 return false;
             }
-            else if (_nameError == null)
-            {
-                return true;
-            }
-            else if (_phoneNumberError != null)
+            
+            if (_phoneNumberError != string.Empty)
             {
                 MessageBox.Show(_phoneNumberError);
                 return false;
             }
-            else if (_phoneNumberError == null)
-            {
-                return true;
-            }
-            else if (_birthdayError != null)
+            
+            if (_birthdayError != string.Empty)
             {
                 MessageBox.Show(_birthdayError);
                 return false;
             }
-            else if (_birthdayError == null)
-            {
-                return true;
-            }
-            else if (_emailError != null)
+            
+            if (_emailError != string.Empty)
             {
                 MessageBox.Show(_emailError);
                 return false;
             }
-            else if (_emailError == null)
-            {
-                return true;
-            }
-            else if (_vkIdError != null)
+            
+            if (_vkIdError != string.Empty)
             {
                 MessageBox.Show(_vkIdError);
                 return false;
             }
-            else if (_vkIdError == null)
+            if (_surnameError == string.Empty)
             {
                 return true;
             }
+
             return true;
         }
+
+        /// <summary>
+        /// в данном методе нет нужды, т.к. всё обновляется в другом месте
+        /// и нет смысла обновлять всё дважды
+        /// </summary>
+        //private void UpdateContact()
+        //{
+        //    _contact.Surname = SurnameEditTextBox.Text;
+        //    _contact.Name = NameEditTextBox.Text;
+        //    _contact.Birthday = BirthdayDayEditTimePicker.Value;
+        //}
 
         private void UpdateForm()
         {
@@ -100,11 +97,10 @@ namespace ContactsApp.View
 
         private void EditFormOKButton_Click(object sender, EventArgs e)
         {
-            if (CheckFromOnErrors() == true)
+            if (CheckFormOnErrors() == true)
             {
                 Close();
             }
-            
         }
 
         private void EditFormCancelButton_Click(object sender, EventArgs e)
@@ -154,7 +150,7 @@ namespace ContactsApp.View
             catch (ArgumentException exception)
             {
                 BirthdayDayEditTimePicker.BackColor = Color.LightPink;
-                _birthdayError= exception.Message;
+                _birthdayError = exception.Message;
             }
         }
 
@@ -166,10 +162,15 @@ namespace ContactsApp.View
                 PhoneEditTextBox.BackColor = Color.White;
                 _phoneNumberError = string.Empty;
             }
+            catch (System.FormatException exception)
+            {
+                PhoneEditTextBox.BackColor = Color.LightPink;
+                _phoneNumberError= "Некорректный номер. Он должен начинаться с 7 и быть меньше 11 символов";
+            }
             catch (ArgumentException exception)
             {
-                NameEditTextBox.BackColor = Color.LightPink;
-                _phoneNumberError= exception.Message;
+                PhoneEditTextBox.BackColor = Color.LightPink;
+                _phoneNumberError = exception.Message;
             }
         }
 

@@ -98,9 +98,13 @@ namespace ContactsApp.Model
             }
         set
             {
-                if (value.Year < 1900 || value > DateTime.Now)
+                if (value.Year < 1900)
                 {
-                    throw new ArgumentException("Некорректное значение поля Birthday");
+                    throw new ArgumentException("Некорректное значение поля Birthday, год должен быть больше 1900");
+                }
+                if (value > DateTime.Now)
+                {
+                    throw new ArgumentException("Некорректное значение поля Birthday, дата рождения должна быть меньше текущей");
                 }
                 _birthday = value;
             }
