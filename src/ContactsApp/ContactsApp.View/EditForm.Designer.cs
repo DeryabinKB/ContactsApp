@@ -1,6 +1,6 @@
 ﻿namespace ContactsApp.View
 {
-    partial class EditForm
+    partial class ContactForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactForm));
             this.BirthdayDayEditTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PhoneLabel = new System.Windows.Forms.Label();
             this.MailLabel = new System.Windows.Forms.Label();
@@ -197,7 +197,7 @@
             this.EditFormCancelButton.UseVisualStyleBackColor = true;
             this.EditFormCancelButton.Click += new System.EventHandler(this.EditFormCancelButton_Click);
             // 
-            // EditForm
+            // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,7 +219,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(670, 254);
             this.MinimumSize = new System.Drawing.Size(670, 254);
-            this.Name = "EditForm";
+            this.Name = "ContactForm";
             this.Text = "Contact Form";
             this.ResumeLayout(false);
             this.PerformLayout();

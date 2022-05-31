@@ -183,7 +183,7 @@ namespace ContactsApp.View
         /// </summary>
         private void contactEditPictureBox_Click(object sender, EventArgs e)
         {
-            EditForm newForm = new EditForm();
+            ContactForm newForm = new ContactForm();
             newForm.Show();
         }
 
