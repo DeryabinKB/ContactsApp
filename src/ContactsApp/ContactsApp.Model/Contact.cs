@@ -171,7 +171,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Функция для создания копии объектов.
         /// </summary>
-        object ICloneable.Clone()
+        public object Clone()
         {
             return new Contact(this.Name, this.Surname,
                 new PhoneNumber(this.Number.Number), this.Birthday,

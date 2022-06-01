@@ -14,14 +14,34 @@ namespace ContactsApp.View
     public partial class ContactForm : Form
     {
 
-        private Contact _contact = new Contact("Kein", "Brawn", new PhoneNumber(79534599771),
-                new DateTime(2001, 06, 07), "ffff@mail.ru", "vkidddd");
+        private Contact _contact = new Contact(" ", " ", new PhoneNumber(7),
+                new DateTime(2001, 06, 07), " ", " ");
+        public Contact Contact
+        { 
+            get 
+            { 
+                return _contact; 
+            } 
+            set
+            {
+                _contact = value;
+            }
+        }
         private string _surnameError;
         private string _nameError;
         private string _phoneNumberError;
         private string _birthdayError;
         private string _emailError;
         private string _vkIdError;
+
+        public ContactForm()
+        {
+            _contact = new Contact(" ", " ", new PhoneNumber(7),
+                new DateTime(2001, 06, 07), " ", " ");
+            InitializeComponent();
+            UpdateForm();
+        }
+
 
         private bool CheckFormOnErrors()
         {
@@ -68,18 +88,9 @@ namespace ContactsApp.View
             return true;
         }
 
-        /// <summary>
-        /// в данном методе нет нужды, т.к. всё обновляется в другом месте
-        /// и нет смысла обновлять всё дважды
-        /// </summary>
-        //private void UpdateContact()
-        //{
-        //    _contact.Surname = SurnameEditTextBox.Text;
-        //    _contact.Name = NameEditTextBox.Text;
-        //    _contact.Birthday = BirthdayDayEditTimePicker.Value;
-        //}
+        
 
-        private void UpdateForm()
+        public void UpdateForm()
         {
             SurnameEditTextBox.Text = _contact.Surname;
             NameEditTextBox.Text = _contact.Name;
@@ -87,12 +98,6 @@ namespace ContactsApp.View
             PhoneEditTextBox.Text = "78005553537";
             MailEditTextBox.Text = _contact.Email;
             VkEditTextBox.Text = _contact.VkId;
-        }
-
-        public ContactForm()
-        {
-            InitializeComponent();
-            UpdateForm();
         }
 
         private void EditFormOKButton_Click(object sender, EventArgs e)
@@ -203,5 +208,21 @@ namespace ContactsApp.View
                 _vkIdError= exception.Message;
             }
         }
+
+
+        /// <summary>
+        /// В данной функции нет нужды, т.к.
+        /// всё обновляется в другом месте
+        /// </summary>
+        //public void UpdateContact()
+        //{
+        //    _contact.Surname = SurnameEditTextBox.Text;
+        //    _contact.Name = NameEditTextBox.Text;
+        //    _contact.Birthday = BirthdayDayEditTimePicker.Value;
+        //    _contact.Number.Number = Convert.ToInt64(PhoneEditTextBox.Text);
+        //    _contact.Email = MailEditTextBox.Text;
+        //    _contact.VkId= VkEditTextBox.Text;
+
+        //}
     }
 }
