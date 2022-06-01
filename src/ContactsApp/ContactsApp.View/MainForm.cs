@@ -118,12 +118,15 @@ namespace ContactsApp.View
         /// <summary>
         /// Открытие окна About.
         /// </summary>
-        private void aboutStripMenu_Click(object sender, EventArgs e)
+        private void AboutStripMenu_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
         }
 
+        /// <summary>
+        /// Добавление контакта.
+        /// </summary>
         public void AddContact()
         {
             Contact newContact = new Contact("name","surname",
@@ -138,6 +141,10 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Редактирование контакта.
+        /// </summary>
+        /// <param name="index">Индекс контакта.</param>
         private void EditContact(int index)
         {
             Contact editContact = _project.Contacts[index];
@@ -162,7 +169,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Срабатывание кнопки добавления контакта в ListBox.
         /// </summary>
-        private void contactCreatePictureBox_Click(object sender, EventArgs e)
+        private void ContactCreatePictureBox_Click(object sender, EventArgs e)
         {
             AddContact();
             UpdateListBox();
@@ -171,7 +178,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Открытие окна редактирования контакта.
         /// </summary>
-        private void contactEditPictureBox_Click(object sender, EventArgs e)
+        private void ContactEditPictureBox_Click(object sender, EventArgs e)
         {
             EditContact(ContactsListBox.SelectedIndex);
             UpdateListBox();
@@ -197,8 +204,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Удаление контакта через Strip menu.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
@@ -219,14 +225,17 @@ namespace ContactsApp.View
             }
         }
 
-        private void addRandomContactToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Добавление случайного контакта через Strip menu.
+        /// </summary>
+        private void AddRandomContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddRandomContact();
             UpdateListBox();
         }
 
         /// <summary>
-        /// Добавление контакта в ListBox.
+        /// Добавление случайно сгенерированного контакта в ListBox.
         /// </summary>
         private void AddRandomContact()
         {
@@ -271,6 +280,11 @@ namespace ContactsApp.View
             _project.Contacts.Add(contact);
         }
 
+        /// <summary>
+        /// Открытие окна редактирования контакта через Strip menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditContactStripMenu_Click(object sender, EventArgs e)
         {
             EditContact(ContactsListBox.SelectedIndex);

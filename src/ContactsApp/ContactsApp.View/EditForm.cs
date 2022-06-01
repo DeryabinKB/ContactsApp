@@ -27,6 +27,9 @@ namespace ContactsApp.View
                 _contact = value;
             }
         }
+        /// <summary>
+        /// Тексты ошибок.
+        /// </summary>
         private string _surnameError;
         private string _nameError;
         private string _phoneNumberError;
@@ -42,7 +45,10 @@ namespace ContactsApp.View
             UpdateForm();
         }
 
-
+        /// <summary>
+        /// Проверка полей на корректность ввода
+        /// </summary>
+        /// <returns></returns>
         private bool CheckFormOnErrors()
         {
             if (_surnameError != string.Empty)
@@ -89,7 +95,9 @@ namespace ContactsApp.View
         }
 
         
-
+        /// <summary>
+        /// Обновление информации в форме.
+        /// </summary>
         public void UpdateForm()
         {
             SurnameEditTextBox.Text = _contact.Surname;
@@ -100,6 +108,9 @@ namespace ContactsApp.View
             VkEditTextBox.Text = _contact.VkId;
         }
 
+        /// <summary>
+        /// Обработка нажатия кнопки OK.
+        /// </summary>
         private void EditFormOKButton_Click(object sender, EventArgs e)
         {
             if (CheckFormOnErrors() == true)
@@ -108,11 +119,17 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Обработка нажатия кнопки Cancel.
+        /// </summary>
         private void EditFormCancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля фамилии.
+        /// </summary>
         private void SurnameEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -129,6 +146,9 @@ namespace ContactsApp.View
             
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля имени.
+        /// </summary>
         private void NameEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -144,6 +164,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля даты рождения.
+        /// </summary>>
         private void BirthdayDayEditTimePicker_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -159,6 +182,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля номера телефона.
+        /// </summary>
         private void PhoneEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -179,6 +205,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля мэйла.
+        /// </summary>
         private void MailEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -194,6 +223,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Изменение данных в контакте при изменении поля айди вк.
+        /// </summary>
         private void VkEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
