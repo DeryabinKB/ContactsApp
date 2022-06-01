@@ -16,6 +16,9 @@ namespace ContactsApp.View
 
         private Contact _contact = new Contact("Kein", "Brawn", new PhoneNumber(79534599771),
                 new DateTime(2001, 06, 07), "ffff@mail.ru", "vkidddd");
+        /// <summary>
+        /// Тексты ошибок.
+        /// </summary>
         private string _surnameError;
         private string _nameError;
         private string _phoneNumberError;
@@ -23,6 +26,10 @@ namespace ContactsApp.View
         private string _emailError;
         private string _vkIdError;
 
+        /// <summary>
+        /// Проверка корректности ввода всех полей.
+        /// </summary>
+        /// <returns></returns>
         private bool CheckFormOnErrors()
         {
             if (_surnameError != string.Empty)
@@ -67,18 +74,10 @@ namespace ContactsApp.View
 
             return true;
         }
-
+        
         /// <summary>
-        /// в данном методе нет нужды, т.к. всё обновляется в другом месте
-        /// и нет смысла обновлять всё дважды
+        /// Обновление данных формы.
         /// </summary>
-        //private void UpdateContact()
-        //{
-        //    _contact.Surname = SurnameEditTextBox.Text;
-        //    _contact.Name = NameEditTextBox.Text;
-        //    _contact.Birthday = BirthdayDayEditTimePicker.Value;
-        //}
-
         private void UpdateForm()
         {
             SurnameEditTextBox.Text = _contact.Surname;
@@ -95,6 +94,9 @@ namespace ContactsApp.View
             UpdateForm();
         }
 
+        /// <summary>
+        /// Обработчик нажатия кнопки ОК.
+        /// </summary>
         private void EditFormOKButton_Click(object sender, EventArgs e)
         {
             if (CheckFormOnErrors() == true)
@@ -103,11 +105,17 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Обработчик нажатия кнопки Cancel.
+        /// </summary>
         private void EditFormCancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Занесение фамилии в контакт в случае изменения.
+        /// </summary>
         private void SurnameEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -124,6 +132,9 @@ namespace ContactsApp.View
             
         }
 
+        /// <summary>
+        /// Занесение имени в контакт в случае изменения.
+        /// </summary>
         private void NameEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -139,6 +150,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Занесение даты рождения в контакт в случае изменения.
+        /// </summary>
         private void BirthdayDayEditTimePicker_ValueChanged(object sender, EventArgs e)
         {
             try
@@ -154,6 +168,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Занесение номера телефона в контакт в случае изменения.
+        /// </summary>
         private void PhoneEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -174,6 +191,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Занесение мэйла в контакт в случае изменения.
+        /// </summary>
         private void MailEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -189,6 +209,9 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Занесение айди вк в контакт в случае изменения.
+        /// </summary>
         private void VkEditTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -203,5 +226,16 @@ namespace ContactsApp.View
                 _vkIdError= exception.Message;
             }
         }
+
+        /// <summary>
+        /// в данном методе нет нужды, т.к. всё обновляется в другом месте
+        /// и нет смысла обновлять всё дважды
+        /// </summary>
+        //private void UpdateContact()
+        //{
+        //    _contact.Surname = SurnameEditTextBox.Text;
+        //    _contact.Name = NameEditTextBox.Text;
+        //    _contact.Birthday = BirthdayDayEditTimePicker.Value;
+        //}
     }
 }

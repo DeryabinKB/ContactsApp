@@ -207,8 +207,6 @@ namespace ContactsApp.View
         /// <summary>
         /// Удаление контакта через Strip menu.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
