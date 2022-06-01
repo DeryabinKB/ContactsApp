@@ -135,7 +135,7 @@
             this.AboutMenuStrip.Name = "AboutMenuStrip";
             this.AboutMenuStrip.Size = new System.Drawing.Size(108, 22);
             this.AboutMenuStrip.Text = "About";
-            this.AboutMenuStrip.Click += new System.EventHandler(this.aboutStripMenu_Click);
+            this.AboutMenuStrip.Click += new System.EventHandler(this.AboutStripMenu_Click);
             // 
             // FindLabel
             // 
@@ -310,7 +310,7 @@
             this.ContactCreatePictureBox.Size = new System.Drawing.Size(19, 20);
             this.ContactCreatePictureBox.TabIndex = 18;
             this.ContactCreatePictureBox.TabStop = false;
-            this.ContactCreatePictureBox.Click += new System.EventHandler(this.contactCreatePictureBox_Click);
+            this.ContactCreatePictureBox.Click += new System.EventHandler(this.ContactCreatePictureBox_Click);
             // 
             // ContactEditPictureBox
             // 
@@ -321,7 +321,7 @@
             this.ContactEditPictureBox.Size = new System.Drawing.Size(20, 21);
             this.ContactEditPictureBox.TabIndex = 20;
             this.ContactEditPictureBox.TabStop = false;
-            this.ContactEditPictureBox.Click += new System.EventHandler(this.contactEditPictureBox_Click);
+            this.ContactEditPictureBox.Click += new System.EventHandler(this.ContactEditPictureBox_Click);
             // 
             // ContactsDeletePictureBox
             // 
@@ -339,7 +339,7 @@
             this.addRandomContactToolStripMenuItem.Name = "addRandomContactToolStripMenuItem";
             this.addRandomContactToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.addRandomContactToolStripMenuItem.Text = "Add Random Contact";
-            this.addRandomContactToolStripMenuItem.Click += new System.EventHandler(this.addRandomContactToolStripMenuItem_Click);
+            this.addRandomContactToolStripMenuItem.Click += new System.EventHandler(this.AddRandomContactToolStripMenuItem_Click);
             // 
             // MainForm
             // 
