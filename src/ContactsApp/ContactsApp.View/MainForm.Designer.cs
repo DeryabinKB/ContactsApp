@@ -109,8 +109,9 @@
             // EditContactStripMenu
             // 
             this.EditContactStripMenu.Name = "EditContactStripMenu";
-            this.EditContactStripMenu.Size = new System.Drawing.Size(167, 22);
+            this.EditContactStripMenu.Size = new System.Drawing.Size(180, 22);
             this.EditContactStripMenu.Text = "Edit Contact";
+            this.EditContactStripMenu.Click += new System.EventHandler(this.EditContactStripMenu_Click);
             // 
             // RemoveContactStripMenu
             // 
@@ -132,7 +133,7 @@
             this.AboutMenuStrip.Name = "AboutMenuStrip";
             this.AboutMenuStrip.Size = new System.Drawing.Size(180, 22);
             this.AboutMenuStrip.Text = "About";
-            this.AboutMenuStrip.Click += new System.EventHandler(this.aboutStripMenu_Click);
+            this.AboutMenuStrip.Click += new System.EventHandler(this.AboutStripMenu_Click);
             // 
             // FindLabel
             // 
@@ -307,7 +308,7 @@
             this.ContactCreatePictureBox.Size = new System.Drawing.Size(19, 20);
             this.ContactCreatePictureBox.TabIndex = 18;
             this.ContactCreatePictureBox.TabStop = false;
-            this.ContactCreatePictureBox.Click += new System.EventHandler(this.contactCreatePictureBox_Click);
+            this.ContactCreatePictureBox.Click += new System.EventHandler(this.ContactCreatePictureBox_Click);
             // 
             // ContactEditPictureBox
             // 
@@ -318,7 +319,7 @@
             this.ContactEditPictureBox.Size = new System.Drawing.Size(20, 21);
             this.ContactEditPictureBox.TabIndex = 20;
             this.ContactEditPictureBox.TabStop = false;
-            this.ContactEditPictureBox.Click += new System.EventHandler(this.contactEditPictureBox_Click);
+            this.ContactEditPictureBox.Click += new System.EventHandler(this.ContactEditPictureBox_Click);
             // 
             // ContactsDeletePictureBox
             // 

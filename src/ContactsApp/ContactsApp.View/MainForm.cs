@@ -163,7 +163,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Открытие окна About.
         /// </summary>
-        private void aboutStripMenu_Click(object sender, EventArgs e)
+        private void AboutStripMenu_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
@@ -172,7 +172,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Срабатывание кнопки добавления контакта в ListBox.
         /// </summary>
-        private void contactCreatePictureBox_Click(object sender, EventArgs e)
+        private void ContactCreatePictureBox_Click(object sender, EventArgs e)
         {
             AddContact();
             UpdateListBox();
@@ -181,7 +181,7 @@ namespace ContactsApp.View
         /// <summary>
         /// Открытие окна редактирования контакта.
         /// </summary>
-        private void contactEditPictureBox_Click(object sender, EventArgs e)
+        private void ContactEditPictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();
@@ -207,8 +207,6 @@ namespace ContactsApp.View
         /// <summary>
         /// Удаление контакта через Strip menu.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
@@ -227,6 +225,15 @@ namespace ContactsApp.View
             {
                 Close();
             }
+        }
+
+        /// <summary>
+        /// Изменение контакта через Strip menu.
+        /// </summary>
+        private void EditContactStripMenu_Click(object sender, EventArgs e)
+        {
+            EditForm newForm = new EditForm();
+            newForm.Show();
         }
     }
 }

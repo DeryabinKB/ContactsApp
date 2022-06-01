@@ -17,11 +17,17 @@ namespace ContactsApp.View
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Действия окна при нажатии на ОК.
+        /// </summary>
         private void EditFormOKButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Действия окна при нажатии на cancel.
+        /// </summary>
         private void EditFormCancelButton_Click(object sender, EventArgs e)
         {
             Close();
