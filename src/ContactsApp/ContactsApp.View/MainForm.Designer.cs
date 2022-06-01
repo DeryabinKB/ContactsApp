@@ -85,7 +85,7 @@
             // ExitStripMenu
             // 
             this.ExitStripMenu.Name = "ExitStripMenu";
-            this.ExitStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.ExitStripMenu.Size = new System.Drawing.Size(95, 22);
             this.ExitStripMenu.Text = "Exit";
             // 
             // EditStripMenu
@@ -101,19 +101,19 @@
             // AddContactStripMenu
             // 
             this.AddContactStripMenu.Name = "AddContactStripMenu";
-            this.AddContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.AddContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.AddContactStripMenu.Text = "Add Contact";
             // 
             // EditContactStripMenu
             // 
             this.EditContactStripMenu.Name = "EditContactStripMenu";
-            this.EditContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.EditContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.EditContactStripMenu.Text = "Edit Contact";
             // 
             // RemoveContactStripMenu
             // 
             this.RemoveContactStripMenu.Name = "RemoveContactStripMenu";
-            this.RemoveContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.RemoveContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.RemoveContactStripMenu.Text = "Remove Contact";
             // 
             // HelpStripMenu
@@ -127,7 +127,7 @@
             // AboutMenuStrip
             // 
             this.AboutMenuStrip.Name = "AboutMenuStrip";
-            this.AboutMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.AboutMenuStrip.Size = new System.Drawing.Size(108, 22);
             this.AboutMenuStrip.Text = "About";
             this.AboutMenuStrip.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -304,7 +304,7 @@
             this.ContactCreatePictureBox.Size = new System.Drawing.Size(19, 20);
             this.ContactCreatePictureBox.TabIndex = 18;
             this.ContactCreatePictureBox.TabStop = false;
-            this.ContactCreatePictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ContactCreatePictureBox.Click += new System.EventHandler(this.ContactCreatePictureBox_Click);
             // 
             // ContactEditPictureBox
             // 
@@ -315,7 +315,7 @@
             this.ContactEditPictureBox.Size = new System.Drawing.Size(20, 21);
             this.ContactEditPictureBox.TabIndex = 20;
             this.ContactEditPictureBox.TabStop = false;
-            this.ContactEditPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.ContactEditPictureBox.Click += new System.EventHandler(this.ContactEditpictureBox_Click);
             // 
             // ContactsDeletePictureBox
             // 

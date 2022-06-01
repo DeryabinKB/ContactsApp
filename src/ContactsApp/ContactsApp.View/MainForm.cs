@@ -17,6 +17,9 @@ namespace ContactsApp.View
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Показ другого контакта.
+        /// </summary>
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedItem;
@@ -51,19 +54,28 @@ namespace ContactsApp.View
 
         }
 
+        /// <summary>
+        /// Открытие окна About через верхнее меню.
+        /// </summary>
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AboutForm newForm = new AboutForm();
             newForm.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Открытие формы создания контакта.
+        /// </summary>
+        private void ContactCreatePictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Открытие формы изменения контакта.
+        /// </summary>
+        private void ContactEditpictureBox_Click(object sender, EventArgs e)
         {
             EditForm newForm = new EditForm();
             newForm.Show();

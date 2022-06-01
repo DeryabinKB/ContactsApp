@@ -43,6 +43,6 @@ namespace ContactsApp.Model
 			this._number = number;
         }
 
-		PhoneNumber(23);
+		//PhoneNumber(23);
 	}
 }

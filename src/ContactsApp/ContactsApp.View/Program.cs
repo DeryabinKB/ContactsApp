@@ -9,7 +9,7 @@ namespace ContactsApp.View
     internal static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Выбор запускаемого окна.
         /// </summary>
         [STAThread]
         static void Main()
