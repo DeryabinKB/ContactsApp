@@ -34,51 +34,6 @@ namespace ContactsApp.View
             }
         }
 
-        /// <summary>
-        /// Добавление контакта в ListBox.
-        /// </summary>
-        private void AddContact()
-        {
-            var randomNames = new List<string>
-            {
-                "Даниил","Максим","Кирилл","Алехандро"
-                ,"Фёдр","Пётр"
-            };
-            var randomSurnames = new List<string>
-            {
-                "Абрамов","Бериллов","Фёдоров",
-                "Семёнов","Константинов"
-            };
-            //var randomPhoneNumbers = new List<string>
-            //{
-            //"78005553535","79531239746","79135578913"
-            //};
-            var randomEmails = new List<string>
-            {
-                "aaabramov@mail.ru",
-                "petrketr@gmail.com",
-                "berillii@inbox.ru",
-                "ker124@mail.ru",
-                "holymail@gmail.com",
-                "maxxx123@mail.ru",
-                "ded@inbox.ru"
-            };
-            var randomVkId = new List<string>
-            {
-                "id845625","kein","berilliin1","heeeeyyy"
-            };
-            Random random = new Random();
-            Contact contact = new 
-                Contact(randomNames[random.Next(randomNames.Count)],
-                randomSurnames[random.Next(randomSurnames.Count)],
-                new PhoneNumber(79534599771),
-                //randomPhoneNumbers[random.Next(randomPhoneNumbers.Count)],
-                new DateTime(2001,06,07),
-                randomEmails[random.Next(randomEmails.Count)],
-                randomVkId[random.Next(randomVkId.Count)]);
-
-            _project.Contacts.Add(contact);
-        }
 
         /// <summary>
         /// Удаление контакта из ListBox.
@@ -169,6 +124,41 @@ namespace ContactsApp.View
             newForm.Show();
         }
 
+        public void AddContact()
+        {
+            Contact newContact = new Contact("name","surname",
+                new PhoneNumber(79540994321),new DateTime(2000,03,05),
+                "email","vkid");
+            ContactForm contactForm = new ContactForm();
+            contactForm.ShowDialog();
+            if (contactForm.DialogResult == DialogResult.OK)
+            {
+                newContact = contactForm.Contact;
+                _project.Contacts.Add(newContact);
+            }
+        }
+
+        private void EditContact(int index)
+        {
+            Contact editContact = _project.Contacts[index];
+            ContactForm contactForm = new ContactForm();
+            contactForm.Contact = (Contact)editContact.Clone();
+            contactForm.UpdateForm();
+            contactForm.ShowDialog();
+            if (contactForm.DialogResult == DialogResult.OK)
+            {
+                editContact.Surname = contactForm.Contact.Surname;
+                editContact.Name = contactForm.Contact.Name;
+                editContact.Birthday = contactForm.Contact.Birthday;
+                editContact.Number = contactForm.Contact.Number;
+                editContact.Email = contactForm.Contact.Email;
+                editContact.VkId = contactForm.Contact.VkId;
+                UpdateListBox();
+                UpdateSelectedContact(index);
+                
+            }
+        }
+
         /// <summary>
         /// Срабатывание кнопки добавления контакта в ListBox.
         /// </summary>
@@ -183,8 +173,8 @@ namespace ContactsApp.View
         /// </summary>
         private void contactEditPictureBox_Click(object sender, EventArgs e)
         {
-            ContactForm newForm = new ContactForm();
-            newForm.Show();
+            EditContact(ContactsListBox.SelectedIndex);
+            UpdateListBox();
         }
 
         /// <summary>
@@ -192,7 +182,7 @@ namespace ContactsApp.View
         /// </summary>
         private void AddContactStripMenu_Click(object sender, EventArgs e)
         {
-            AddContact();
+            AddRandomContact();
             UpdateListBox();
         }
 
@@ -227,6 +217,64 @@ namespace ContactsApp.View
             {
                 Close();
             }
+        }
+
+        private void addRandomContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddRandomContact();
+            UpdateListBox();
+        }
+
+        /// <summary>
+        /// Добавление контакта в ListBox.
+        /// </summary>
+        private void AddRandomContact()
+        {
+            var randomNames = new List<string>
+            {
+                "Даниил","Максим","Кирилл","Алехандро"
+                ,"Фёдр","Пётр"
+            };
+            var randomSurnames = new List<string>
+            {
+                "Абрамов","Бериллов","Фёдоров",
+                "Семёнов","Константинов"
+            };
+            //var randomPhoneNumbers = new List<string>
+            //{
+            //"78005553535","79531239746","79135578913"
+            //};
+            var randomEmails = new List<string>
+            {
+                "aaabramov@mail.ru",
+                "petrketr@gmail.com",
+                "berillii@inbox.ru",
+                "ker124@mail.ru",
+                "holymail@gmail.com",
+                "maxxx123@mail.ru",
+                "ded@inbox.ru"
+            };
+            var randomVkId = new List<string>
+            {
+                "id845625","kein","berilliin1","heeeeyyy"
+            };
+            Random random = new Random();
+            Contact contact = new
+                Contact(randomNames[random.Next(randomNames.Count)],
+                randomSurnames[random.Next(randomSurnames.Count)],
+                new PhoneNumber(79534599771),
+                //randomPhoneNumbers[random.Next(randomPhoneNumbers.Count)],
+                new DateTime(2001, 06, 07),
+                randomEmails[random.Next(randomEmails.Count)],
+                randomVkId[random.Next(randomVkId.Count)]);
+
+            _project.Contacts.Add(contact);
+        }
+
+        private void EditContactStripMenu_Click(object sender, EventArgs e)
+        {
+            EditContact(ContactsListBox.SelectedIndex);
+            UpdateListBox();
         }
     }
 }
