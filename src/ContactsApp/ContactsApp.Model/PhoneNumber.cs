@@ -28,7 +28,7 @@ namespace ContactsApp.Model
             {
 				if (value.ToString().Length>_numberLengthLimit || !value.ToString().StartsWith("7"))
                 {
-					throw new ArgumentException("Длина номера должна быть меньше 11 символов и начинаться с 7");
+					throw new ArgumentException("Length of number must be less then 11 symbols and should start from 7");
                 }
 				this._number = value;
             }

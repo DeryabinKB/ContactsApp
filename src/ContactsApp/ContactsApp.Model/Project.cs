@@ -14,6 +14,6 @@ namespace ContactsApp.Model
         /// <summary>
         /// Список всех контактов.
         /// </summary>
-        public List<Contact> Contacts { set; get; } = new List<Contact>();
+        public List<Contact> Contacts { get; set; } = new List<Contact>();
     }
 }

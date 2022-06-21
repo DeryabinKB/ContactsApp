@@ -183,7 +183,6 @@
             // 
             // EditFormOKButton
             // 
-            this.EditFormOKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.EditFormOKButton.Location = new System.Drawing.Point(486, 180);
             this.EditFormOKButton.Name = "EditFormOKButton";
             this.EditFormOKButton.Size = new System.Drawing.Size(75, 23);
