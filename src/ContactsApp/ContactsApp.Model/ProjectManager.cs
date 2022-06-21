@@ -20,7 +20,7 @@ namespace ContactsApp.Model
         /// </summary>
         private static readonly string _folder = Environment.GetFolderPath(
                 Environment.SpecialFolder.ApplicationData) +
-            "\\ContactsApp\\";
+            "DNA"+"\\ContactsApp\\";
 
         /// <summary>
         /// Путь сохранения файла.
@@ -59,7 +59,7 @@ namespace ContactsApp.Model
                 using (var sr = new StreamReader(DefaultPath))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    var project = (Project)serializer.Deserialize<Project>(reader);
+                    var project = serializer.Deserialize<Project>(reader);
                     if (project == null)
                     {
                         return new Project();

@@ -14,7 +14,11 @@ namespace ContactsApp.View
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Создания листа с контактами
+        /// </summary>
         private Project _project = new Project();
+
         public MainForm()
         {
             _project = new Project();
@@ -34,7 +38,6 @@ namespace ContactsApp.View
             }
         }
 
-
         /// <summary>
         /// Удаление контакта из ListBox.
         /// </summary>
@@ -45,7 +48,6 @@ namespace ContactsApp.View
             {
                 return;
             }
-
             DialogResult result = MessageBox.Show
                 ("Do you really want to remove this contact?",
                 "Confirm?",
@@ -120,8 +122,8 @@ namespace ContactsApp.View
         /// </summary>
         private void AboutStripMenu_Click(object sender, EventArgs e)
         {
-            AboutForm newForm = new AboutForm();
-            newForm.Show();
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
         }
 
         /// <summary>
@@ -129,15 +131,11 @@ namespace ContactsApp.View
         /// </summary>
         public void AddContact()
         {
-            Contact newContact = new Contact("name","surname",
-                new PhoneNumber(79540994321),new DateTime(2000,03,05),
-                "email","vkid");
             ContactForm contactForm = new ContactForm();
             contactForm.ShowDialog();
             if (contactForm.DialogResult == DialogResult.OK)
             {
-                newContact = contactForm.Contact;
-                _project.Contacts.Add(newContact);
+                _project.Contacts.Add(contactForm._contact);
             }
         }
 
@@ -162,7 +160,7 @@ namespace ContactsApp.View
                 editContact.VkId = contactForm.Contact.VkId;
                 UpdateListBox();
                 UpdateSelectedContact(index);
-                
+                ContactsListBox.SelectedIndex = index;
             }
         }
 
@@ -189,7 +187,7 @@ namespace ContactsApp.View
         /// </summary>
         private void AddContactStripMenu_Click(object sender, EventArgs e)
         {
-            AddRandomContact();
+            AddContact();
             UpdateListBox();
         }
 
@@ -204,7 +202,6 @@ namespace ContactsApp.View
         /// <summary>
         /// Удаление контакта через Strip menu.
         /// </summary>
-
         private void RemoveContactStripMenu_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
@@ -276,15 +273,12 @@ namespace ContactsApp.View
                 new DateTime(2001, 06, 07),
                 randomEmails[random.Next(randomEmails.Count)],
                 randomVkId[random.Next(randomVkId.Count)]);
-
             _project.Contacts.Add(contact);
         }
 
         /// <summary>
         /// Открытие окна редактирования контакта через Strip menu.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void EditContactStripMenu_Click(object sender, EventArgs e)
         {
             EditContact(ContactsListBox.SelectedIndex);
