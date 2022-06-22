@@ -56,7 +56,6 @@
             this.ContactCreatePictureBox = new System.Windows.Forms.PictureBox();
             this.ContactEditPictureBox = new System.Windows.Forms.PictureBox();
             this.ContactsDeletePictureBox = new System.Windows.Forms.PictureBox();
-            this.addRandomContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactCreatePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ContactEditPictureBox)).BeginInit();
@@ -95,8 +94,7 @@
             this.EditStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddContactStripMenu,
             this.EditContactStripMenu,
-            this.RemoveContactStripMenu,
-            this.addRandomContactToolStripMenuItem});
+            this.RemoveContactStripMenu});
             this.EditStripMenu.Name = "EditStripMenu";
             this.EditStripMenu.Size = new System.Drawing.Size(40, 20);
             this.EditStripMenu.Text = "Edit";
@@ -104,21 +102,21 @@
             // AddContactStripMenu
             // 
             this.AddContactStripMenu.Name = "AddContactStripMenu";
-            this.AddContactStripMenu.Size = new System.Drawing.Size(191, 22);
+            this.AddContactStripMenu.Size = new System.Drawing.Size(180, 22);
             this.AddContactStripMenu.Text = "Add Contact";
             this.AddContactStripMenu.Click += new System.EventHandler(this.AddContactStripMenu_Click);
             // 
             // EditContactStripMenu
             // 
             this.EditContactStripMenu.Name = "EditContactStripMenu";
-            this.EditContactStripMenu.Size = new System.Drawing.Size(191, 22);
+            this.EditContactStripMenu.Size = new System.Drawing.Size(180, 22);
             this.EditContactStripMenu.Text = "Edit Contact";
             this.EditContactStripMenu.Click += new System.EventHandler(this.EditContactStripMenu_Click);
             // 
             // RemoveContactStripMenu
             // 
             this.RemoveContactStripMenu.Name = "RemoveContactStripMenu";
-            this.RemoveContactStripMenu.Size = new System.Drawing.Size(191, 22);
+            this.RemoveContactStripMenu.Size = new System.Drawing.Size(180, 22);
             this.RemoveContactStripMenu.Text = "Remove Contact";
             this.RemoveContactStripMenu.Click += new System.EventHandler(this.RemoveContactStripMenu_Click);
             // 
@@ -170,6 +168,7 @@
             this.FindTextBox.Name = "FindTextBox";
             this.FindTextBox.Size = new System.Drawing.Size(176, 22);
             this.FindTextBox.TabIndex = 4;
+            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
             // 
             // SurnameLabel
             // 
@@ -334,13 +333,6 @@
             this.ContactsDeletePictureBox.TabStop = false;
             this.ContactsDeletePictureBox.Click += new System.EventHandler(this.ContactsDeletePictureBox_Click);
             // 
-            // addRandomContactToolStripMenuItem
-            // 
-            this.addRandomContactToolStripMenuItem.Name = "addRandomContactToolStripMenuItem";
-            this.addRandomContactToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.addRandomContactToolStripMenuItem.Text = "Add Random Contact";
-            this.addRandomContactToolStripMenuItem.Click += new System.EventHandler(this.AddRandomContactToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,7 +400,6 @@
         private System.Windows.Forms.PictureBox ContactCreatePictureBox;
         private System.Windows.Forms.PictureBox ContactEditPictureBox;
         private System.Windows.Forms.PictureBox ContactsDeletePictureBox;
-        private System.Windows.Forms.ToolStripMenuItem addRandomContactToolStripMenuItem;
     }
 }
 
