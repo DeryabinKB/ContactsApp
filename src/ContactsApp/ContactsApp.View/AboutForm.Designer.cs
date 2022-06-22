@@ -98,6 +98,7 @@
             this.MailLinkLable.TabIndex = 5;
             this.MailLinkLable.TabStop = true;
             this.MailLinkLable.Text = "deryabin.2001@inbox.ru";
+            this.MailLinkLable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.MailLinkLable_LinkClicked);
             // 
             // GitLinkLable
             // 
@@ -109,6 +110,7 @@
             this.GitLinkLable.TabIndex = 6;
             this.GitLinkLable.TabStop = true;
             this.GitLinkLable.Text = "DeryabinKB";
+            this.GitLinkLable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitLinkLable_LinkClicked);
             // 
             // AboutForm
             // 
