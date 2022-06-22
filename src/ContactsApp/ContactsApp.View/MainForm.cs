@@ -163,10 +163,10 @@ namespace ContactsApp.View
                 MessageBox.Show("Choose contact");
                 return;
             }
-            Contact editContact = _project.Contacts[index];
+            Contact editContact = _currentContacts[index];
             ContactForm contactForm = new ContactForm();
+            contactForm.Contact = editContact;
 
-            contactForm.Contact = (Contact)editContact.Clone();
             contactForm.UpdateForm();
             contactForm.ShowDialog();
             if (contactForm.DialogResult == DialogResult.OK)

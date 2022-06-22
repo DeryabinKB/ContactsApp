@@ -16,8 +16,8 @@ namespace ContactsApp.View
         /// <summary>
         /// Создание экземпляра контакта.
         /// </summary>
-        public Contact _contact = new Contact(" ", " ", new PhoneNumber(7),
-                new DateTime(2001, 06, 07), " ", " ");
+        public Contact _contact = new Contact("Name", "Surname", new PhoneNumber(7),
+                new DateTime(2001, 06, 07), "Email", "VkId");
 
         /// <summary>
         /// Цвет поля при корректном вводе.
