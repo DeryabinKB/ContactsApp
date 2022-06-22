@@ -180,7 +180,6 @@ namespace ContactsApp.View
                 SurnameEditTextBox.BackColor = incorrectColor;
                 _surnameError = exception.Message;
             }
-            
         }
 
         /// <summary>
