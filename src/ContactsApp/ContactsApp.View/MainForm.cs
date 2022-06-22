@@ -27,6 +27,7 @@ namespace ContactsApp.View
         public MainForm()
         {
             _project = new Project();
+            _project = ProjectManager.LoadFromFile();
             InitializeComponent();
             _currentContacts = new List<Contact>(_project.SortBySurname());
             UpdateListBox();
@@ -66,6 +67,7 @@ namespace ContactsApp.View
                 _currentContacts.RemoveAt(index);
                 _project.Contacts.RemoveAt(contactIndex);
                 UpdateListBox();
+                ProjectManager.SaveToFile(_project);
             }
         }
 
@@ -146,6 +148,7 @@ namespace ContactsApp.View
                 Contact newContact = contactForm.Contact;
                 _currentContacts.Add(newContact);
                 _project.Contacts.Add(contactForm._contact);
+                ProjectManager.SaveToFile(_project);
             }
         }
 
@@ -177,6 +180,7 @@ namespace ContactsApp.View
                 UpdateListBox();
                 UpdateSelectedContact(index);
                 ContactsListBox.SelectedIndex = index;
+                ProjectManager.SaveToFile(_project);
             }
         }
 
@@ -235,6 +239,7 @@ namespace ContactsApp.View
             if (result != DialogResult.Cancel)
             {
                 Close();
+                ProjectManager.SaveToFile(_project);
             }
         }
 

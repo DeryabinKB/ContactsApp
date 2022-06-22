@@ -138,7 +138,7 @@ namespace ContactsApp.View
             SurnameEditTextBox.Text = _contact.Surname;
             NameEditTextBox.Text = _contact.Name;
             BirthdayDayEditTimePicker.Value = _contact.Birthday;
-            PhoneEditTextBox.Text = "78005553537";
+            PhoneEditTextBox.Text = _contact.Number.Number.ToString();
             MailEditTextBox.Text = _contact.Email;
             VkEditTextBox.Text = _contact.VkId;
         }

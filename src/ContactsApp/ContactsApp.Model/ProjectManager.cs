@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContactsApp.Model
 {
-    class ProjectManager
+    public static class ProjectManager
     {
         /// <summary>
         /// Название файла.
@@ -18,9 +18,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Папка.
         /// </summary>
-        private static readonly string _folder = Environment.GetFolderPath(
-                Environment.SpecialFolder.ApplicationData) +
-            "DNA"+"\\ContactsApp\\";
+        private static readonly string _folder = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\DNA\\ContactsApp\\";
 
         /// <summary>
         /// Путь сохранения файла.
@@ -38,6 +36,10 @@ namespace ContactsApp.Model
         /// <param name="data"></param>
         public static void SaveToFile(Project data)
         {
+            if (!File.Exists(DefaultPath))
+            {
+                CreatePath(_folder, _fileName);
+            }
             var serializer = new JsonSerializer();
             serializer.Formatting = Formatting.Indented;
             using (var sw = new StreamWriter(DefaultPath))
@@ -59,7 +61,7 @@ namespace ContactsApp.Model
                 using (var sr = new StreamReader(DefaultPath))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    var project = serializer.Deserialize<Project>(reader);
+                    Project project = (Project)serializer.Deserialize<Project>(reader);
                     if (project == null)
                     {
                         return new Project();
@@ -68,10 +70,36 @@ namespace ContactsApp.Model
                     return project;
                 }
             }
-            catch (Exception exception)
+            catch
             {
                 return new Project();
             }
+        }
+        /// <summary>
+        /// Создает файл.
+        /// </summary>
+        /// <param name="folder">Расположение папки</param>
+        /// <param name="fileName">Название файла</param>
+        public static void CreatePath(string folder, string fileName)
+        {
+            if (folder == null)
+            {
+                folder = _folder;
+            }
+            if (fileName == null)
+            {
+                fileName = _fileName;
+            }
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            if (!File.Exists(folder + fileName))
+            {
+                File.Create(folder + fileName).Close();
+            }
+
+            DefaultPath = folder + fileName;
         }
     }
 }
