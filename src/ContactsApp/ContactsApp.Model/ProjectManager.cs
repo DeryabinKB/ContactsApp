@@ -18,8 +18,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Папка.
         /// </summary>
-        private static readonly string _folder = $"{Environment.
-            GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\DNA\\ContactsApp\\";
+        private static readonly string _folder = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\DNA\\ContactsApp\\";
 
         /// <summary>
         /// Путь сохранения файла.
