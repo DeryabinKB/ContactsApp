@@ -15,7 +15,7 @@ namespace ContactsApp.View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Создания листа с контактами
+        /// Лист с контактами
         /// </summary>
         private Project _project = new Project();
 
@@ -186,6 +186,9 @@ namespace ContactsApp.View
                 ContactsListBox.SelectedIndex = index;
                 ProjectManager.SaveToFile(_project);
             }
+            string text = FindTextBox.Text;
+            _currentContacts = _project.SearchBySurname(text);
+            UpdateListBox();
         }
 
         /// <summary>
