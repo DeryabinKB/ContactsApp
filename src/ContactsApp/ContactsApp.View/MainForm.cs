@@ -63,7 +63,8 @@ namespace ContactsApp.View
             if (result == DialogResult.OK)
             {
                 int contactIndex = _project.Contacts.FindIndex(contact =>
-                contact.Surname == _currentContacts[index].Surname && contact.Number.Number == _currentContacts[index].Number.Number);
+                contact.Surname == _currentContacts[index].Surname && contact.
+                Number.Number == _currentContacts[index].Number.Number);
                 _currentContacts.RemoveAt(index);
                 _project.Contacts.RemoveAt(contactIndex);
                 UpdateListBox();
