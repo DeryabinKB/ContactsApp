@@ -153,6 +153,9 @@ namespace ContactsApp.View
                 ProjectManager.SaveToFile(_project);
                 ClearSelectedContact();
             }
+            string text = FindTextBox.Text;
+            _currentContacts = _project.SearchBySurname(text);
+            UpdateListBox();
         }
 
         /// <summary>
