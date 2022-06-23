@@ -15,7 +15,7 @@ namespace ContactsApp.View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Создания листа с контактами
+        /// Лист с контактами
         /// </summary>
         private Project _project = new Project();
 
@@ -63,7 +63,8 @@ namespace ContactsApp.View
             if (result == DialogResult.OK)
             {
                 int contactIndex = _project.Contacts.FindIndex(contact =>
-                contact.Surname == _currentContacts[index].Surname && contact.Number.Number == _currentContacts[index].Number.Number);
+                contact.Surname == _currentContacts[index].Surname && contact.Number.Number == 
+                _currentContacts[index].Number.Number);
                 _currentContacts.RemoveAt(index);
                 _project.Contacts.RemoveAt(contactIndex);
                 UpdateListBox();
@@ -185,6 +186,9 @@ namespace ContactsApp.View
                 ContactsListBox.SelectedIndex = index;
                 ProjectManager.SaveToFile(_project);
             }
+            string text = FindTextBox.Text;
+            _currentContacts = _project.SearchBySurname(text);
+            UpdateListBox();
         }
 
         /// <summary>
