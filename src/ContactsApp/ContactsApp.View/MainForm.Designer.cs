@@ -102,21 +102,21 @@
             // AddContactStripMenu
             // 
             this.AddContactStripMenu.Name = "AddContactStripMenu";
-            this.AddContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.AddContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.AddContactStripMenu.Text = "Add Contact";
             this.AddContactStripMenu.Click += new System.EventHandler(this.AddContactStripMenu_Click);
             // 
             // EditContactStripMenu
             // 
             this.EditContactStripMenu.Name = "EditContactStripMenu";
-            this.EditContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.EditContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.EditContactStripMenu.Text = "Edit Contact";
             this.EditContactStripMenu.Click += new System.EventHandler(this.EditContactStripMenu_Click);
             // 
             // RemoveContactStripMenu
             // 
             this.RemoveContactStripMenu.Name = "RemoveContactStripMenu";
-            this.RemoveContactStripMenu.Size = new System.Drawing.Size(180, 22);
+            this.RemoveContactStripMenu.Size = new System.Drawing.Size(167, 22);
             this.RemoveContactStripMenu.Text = "Remove Contact";
             this.RemoveContactStripMenu.Click += new System.EventHandler(this.RemoveContactStripMenu_Click);
             // 
@@ -187,6 +187,7 @@
             this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.SurnameTextBox.Enabled = false;
             this.SurnameTextBox.Location = new System.Drawing.Point(320, 30);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(576, 22);
@@ -197,6 +198,7 @@
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.NameTextBox.Enabled = false;
             this.NameTextBox.Location = new System.Drawing.Point(320, 58);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(576, 22);
@@ -231,6 +233,7 @@
             this.VkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.VkTextBox.Enabled = false;
             this.VkTextBox.Location = new System.Drawing.Point(320, 170);
             this.VkTextBox.Name = "VkTextBox";
             this.VkTextBox.Size = new System.Drawing.Size(576, 22);
@@ -241,6 +244,7 @@
             this.MailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.MailTextBox.Enabled = false;
             this.MailTextBox.Location = new System.Drawing.Point(320, 142);
             this.MailTextBox.Name = "MailTextBox";
             this.MailTextBox.Size = new System.Drawing.Size(576, 22);
@@ -251,6 +255,7 @@
             this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PhoneTextBox.Enabled = false;
             this.PhoneTextBox.Location = new System.Drawing.Point(320, 114);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(576, 22);
@@ -294,6 +299,7 @@
             // 
             // BirthdayDayTimePicker
             // 
+            this.BirthdayDayTimePicker.Enabled = false;
             this.BirthdayDayTimePicker.Location = new System.Drawing.Point(320, 86);
             this.BirthdayDayTimePicker.Name = "BirthdayDayTimePicker";
             this.BirthdayDayTimePicker.Size = new System.Drawing.Size(125, 22);
