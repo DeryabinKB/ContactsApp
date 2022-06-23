@@ -22,7 +22,8 @@ namespace ContactsApp.Model
         /// <returns></returns>
         public List<Contact> SortBySurname()
         {
-            List<Contact> newList = Contacts.OrderBy(contact => contact.Surname).ToList();
+            List<Contact> newList = Contacts.
+                OrderBy(contact => contact.Surname).ToList();
             return newList;
         }
 
