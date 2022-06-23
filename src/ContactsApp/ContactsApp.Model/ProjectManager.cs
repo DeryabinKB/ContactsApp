@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ContactsApp.Model
 {
+    /// <summary>
+    /// Сохранение и удаление файла.
+    /// </summary>
     public static class ProjectManager
     {
         /// <summary>
@@ -18,7 +21,9 @@ namespace ContactsApp.Model
         /// <summary>
         /// Папка.
         /// </summary>
-        private static readonly string _folder = $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\DNA\\ContactsApp\\";
+        private static readonly string _folder = 
+        $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}" +
+        $"\\DNA\\ContactsApp\\";
 
         /// <summary>
         /// Путь сохранения файла.
@@ -61,7 +66,8 @@ namespace ContactsApp.Model
                 using (var sr = new StreamReader(DefaultPath))
                 using (JsonReader reader = new JsonTextReader(sr))
                 {
-                    Project project = (Project)serializer.Deserialize<Project>(reader);
+                    Project project = 
+                        (Project)serializer.Deserialize<Project>(reader);
                     if (project == null)
                     {
                         return new Project();
@@ -75,6 +81,7 @@ namespace ContactsApp.Model
                 return new Project();
             }
         }
+
         /// <summary>
         /// Создает файл.
         /// </summary>

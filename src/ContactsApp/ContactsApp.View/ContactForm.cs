@@ -22,12 +22,12 @@ namespace ContactsApp.View
         /// <summary>
         /// Цвет поля при корректном вводе.
         /// </summary>
-        private Color correctColor = Color.White; 
+        private Color _correctColor = Color.White; 
 
         /// <summary>
         /// Цвет поля при некорректном вводе.
         /// </summary>
-        private Color incorrectColor = Color.LightPink;
+        private Color _incorrectColor = Color.LightPink;
 
         /// <summary>
         /// Сеттер и геттер контакта.
@@ -92,32 +92,32 @@ namespace ContactsApp.View
 
             if (_surnameError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect surname ||\n";
+                errorText = errorText + " Incorrect surname \n";
             }
             
             if (_nameError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect name ||\n";
+                errorText = errorText + " Incorrect name \n";
             }
             
             if (_phoneNumberError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect number ||\n";
+                errorText = errorText + " Incorrect number \n";
             }
             
             if (_birthdayError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect birthday ||\n";
+                errorText = errorText + " Incorrect birthday \n";
             }
             
             if (_emailError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect mail ||\n";
+                errorText = errorText + " Incorrect mail \n";
             }
             
             if (_vkIdError != string.Empty)
             {
-                errorText = errorText + "|| Incorrect vkId ||\n";
+                errorText = errorText + " Incorrect vkId \n";
             }
             if (errorText == string.Empty)
             {
@@ -173,12 +173,12 @@ namespace ContactsApp.View
             try
             {
                 _contact.Surname = SurnameEditTextBox.Text;
-                SurnameEditTextBox.BackColor = correctColor;
+                SurnameEditTextBox.BackColor = _correctColor;
                 _surnameError = string.Empty;
             }
             catch(ArgumentException exception)
             {
-                SurnameEditTextBox.BackColor = incorrectColor;
+                SurnameEditTextBox.BackColor = _incorrectColor;
                 _surnameError = exception.Message;
             }
         }
@@ -191,12 +191,12 @@ namespace ContactsApp.View
             try
             {
                 _contact.Name = NameEditTextBox.Text;
-                NameEditTextBox.BackColor = correctColor;
+                NameEditTextBox.BackColor = _correctColor;
                 _nameError = string.Empty;
             }
             catch (ArgumentException exception)
             {
-                NameEditTextBox.BackColor = incorrectColor;
+                NameEditTextBox.BackColor = _incorrectColor;
                 _nameError= exception.Message;
             }
         }
@@ -209,12 +209,12 @@ namespace ContactsApp.View
             try
             {
                 _contact.Birthday = BirthdayDayEditTimePicker.Value;
-                BirthdayDayEditTimePicker.BackColor = correctColor;
+                BirthdayDayEditTimePicker.BackColor = _correctColor;
                 _birthdayError = string.Empty;
             }
             catch (ArgumentException exception)
             {
-                BirthdayDayEditTimePicker.BackColor = incorrectColor;
+                BirthdayDayEditTimePicker.BackColor = _incorrectColor;
                 _birthdayError = exception.Message;
             }
         }
@@ -227,17 +227,17 @@ namespace ContactsApp.View
             try
             {
                 _contact.Number.Number = Convert.ToInt64(PhoneEditTextBox.Text);
-                PhoneEditTextBox.BackColor = correctColor;
+                PhoneEditTextBox.BackColor = _correctColor;
                 _phoneNumberError = string.Empty;
             }
             catch (System.FormatException exception)
             {
-                PhoneEditTextBox.BackColor = incorrectColor;
+                PhoneEditTextBox.BackColor = _incorrectColor;
                 _phoneNumberError= "Length of number must be less then 11 symbols and should start from 7";
             }
             catch (ArgumentException exception)
             {
-                PhoneEditTextBox.BackColor = incorrectColor;
+                PhoneEditTextBox.BackColor = _incorrectColor;
                 _phoneNumberError = exception.Message;
             }
         }
@@ -250,12 +250,12 @@ namespace ContactsApp.View
             try
             {
                 _contact.Email = MailEditTextBox.Text;
-                MailEditTextBox.BackColor = correctColor;
+                MailEditTextBox.BackColor = _correctColor;
                 _emailError = string.Empty;
             }
             catch (ArgumentException exception)
             {
-                MailEditTextBox.BackColor = incorrectColor;
+                MailEditTextBox.BackColor = _incorrectColor;
                 _emailError= exception.Message;
             }
         }
@@ -268,12 +268,12 @@ namespace ContactsApp.View
             try
             {
                 _contact.VkId = VkEditTextBox.Text;
-                VkEditTextBox.BackColor = correctColor;
+                VkEditTextBox.BackColor = _correctColor;
                 _vkIdError = string.Empty;
             }
             catch (ArgumentException exception)
             {
-                VkEditTextBox.BackColor = incorrectColor;
+                VkEditTextBox.BackColor = _incorrectColor;
                 _vkIdError= exception.Message;
             }
         }
