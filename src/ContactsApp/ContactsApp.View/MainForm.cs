@@ -68,6 +68,7 @@ namespace ContactsApp.View
                 _project.Contacts.RemoveAt(contactIndex);
                 UpdateListBox();
                 ProjectManager.SaveToFile(_project);
+                ClearSelectedContact();
             }
         }
 
@@ -149,6 +150,7 @@ namespace ContactsApp.View
                 _currentContacts.Add(newContact);
                 _project.Contacts.Add(contactForm._contact);
                 ProjectManager.SaveToFile(_project);
+                ClearSelectedContact();
             }
         }
 
@@ -179,6 +181,7 @@ namespace ContactsApp.View
                 editContact.VkId = contactForm.Contact.VkId;
                 UpdateListBox();
                 UpdateSelectedContact(index);
+                ClearSelectedContact();
                 ContactsListBox.SelectedIndex = index;
                 ProjectManager.SaveToFile(_project);
             }
