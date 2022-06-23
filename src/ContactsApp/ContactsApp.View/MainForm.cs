@@ -165,11 +165,11 @@ namespace ContactsApp.View
             }
             Contact editContact = _currentContacts[index];
             ContactForm contactForm = new ContactForm();
-            contactForm.Contact = editContact;
+            contactForm.Contact = (Contact)editContact.Clone();
 
             contactForm.UpdateForm();
-            contactForm.ShowDialog();
-            if (contactForm.DialogResult == DialogResult.OK)
+            DialogResult result = contactForm.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 editContact.Surname = contactForm.Contact.Surname;
                 editContact.Name = contactForm.Contact.Name;

@@ -161,6 +161,7 @@ namespace ContactsApp.View
         /// </summary>
         private void EditFormCancelButton_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
